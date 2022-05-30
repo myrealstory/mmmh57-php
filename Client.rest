@@ -1,0 +1,13 @@
+GET http://http://localhost/mmmh57-php/proj/practice/a20220518-selfttest-post.php
+###
+
+GET http://localhost/mmmh57-php/proj/practice/a20220518-selfttest-post.php?account=gordon&password=01234
+###
+
+POST http://localhost/mmmh57-php/proj/practice/a20220518-09-post.php
+Content-Type: application/x-www-form-urlencoded
+
+account=gordon&password=01234
+
+###
+

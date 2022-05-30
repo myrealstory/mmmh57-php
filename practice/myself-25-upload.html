@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      name="form1"
+      action=""
+      onsubmit="return false;"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <!-- 如果上傳要透過傳統的表單送出的話，method 和 enctype 一定要這樣設定 -->
+      <input
+        type="file"
+        name="myfile"
+        accept="image/*"
+        onchange="changeImg(event)"
+      />
+      <!-- 如果今天要只限定只能用照片的話，就在accept下image/ * 代表所有類型的照片都可以接受 如果局限jpg就下 /jpg -->
+      <!-- 如果是要局限兩種的話，可以這樣寫 image/png，image/jpeg 這樣 -->
+    </form>
+    <img src="" alt="" id="myimg" />
+    <script>
+      // document.form1.myfile.files // fileList
+      //document.form1.myfile.files[0] //
+
+      function changeImg() {
+        const file = event.currentTarget / files[0];
+        console.log(file);
+        const reader = new FileReader();
+
+        //資料載入進來讀取以後要完成的事情
+        reader.onload = function () {
+          console.log(reader.result);
+          document.querySelector("#myimg").src = reader.result;
+        };
+        reader.readAsDataURL(file);
+        //用readAsDataURL 就決定這個檔案讀出來的格式是什麼。
+        //base64 是二元資料的字串，可以用此變成圖片。
+      }
+    </script>
+  </body>
+</html>
