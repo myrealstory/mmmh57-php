@@ -1,9 +1,9 @@
 <?php
 
 $db_host = 'localhost';  //連主機名稱
-$db_user = 'tester01'; //資料庫連線的用戶
+$db_user = 'tester'; //資料庫連線的用戶
 $db_pass = 'test0101'; //連線用戶的密碼
-$db_name = 'test01'; //用的資料庫名稱
+$db_name = 'mfee26'; //用的資料庫名稱
 
 $dsn = "mysql:host={$db_host};dbname={$db_name};charset=utf8mb4";
 //db host 主機的意思， dbname 主機的名字

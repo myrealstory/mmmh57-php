@@ -43,7 +43,7 @@ $sql = sprintf("SELECT * FROM address_book ORDER BY sid DESC LIMIT %s , %s", ($p
 $rows = $pdo->query($sql)->fetchAll();
 //SELECT * FROM address_book LIMIT 0,5 這樣也是5筆，可是這樣可以選擇從第幾筆取到第幾筆
 //MVC 資料處理，呈現，跟客戶的互動
-
+$row2 = 0;
 if (!empty($_GET['search'])) {
     //如果搜尋的input不是空白的值時
     $search = $_GET['search'];
@@ -126,7 +126,7 @@ if (!empty($_GET['search'])) {
         <tbody>
             <?php
 
-            if ($rows2 != 0) {
+            if (!empty($rows2)) {
                 foreach ($results as $items) {
             ?>
                     <tr>
@@ -148,7 +148,7 @@ if (!empty($_GET['search'])) {
                     </tr>
                 <?php
                 }
-            } else if ($row2 == 0) {
+            } else {
                 ?>
                 <?php foreach ($rows as $r) : ?>
                     <tr>
