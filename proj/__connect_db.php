@@ -1,6 +1,6 @@
 <?php
 $db_host = 'localhost';
-$db_name = 'proj57';
+$db_name = 'mfee26';
 $db_user = 'shinder';
 $db_pass = 'admin';
 
@@ -14,12 +14,10 @@ $pdo_options = [
 
 try {
     $pdo = new PDO($dsn, $db_user, $db_pass, $pdo_options);
-} catch(PDOException $ex){
-    echo 'Ex:'. $ex->getMessage();
+} catch (PDOException $ex) {
+    echo 'Ex:' . $ex->getMessage();
 }
 
-if(! isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 }
-
-
