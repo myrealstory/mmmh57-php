@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const myPromise = (pid)=>{
+            return new Promise((resolve,reject)=>{
+
+            setTimeout(()=>{
+                // resolve('abc');
+                Math.random()>.5 ? resolve('ok:'+pid) : reject('fail:'+pid);
+
+            },300 * pid);
+
+        });
+    };
+
+    for(let i = 0 ; i < 10 ; i++){
+        myPromise(i)
+        .then((result)=>{
+            console.log('result:',result);
+        })
+        .catch((ex)=>{
+            console.log('ex:',ex);
+        });
+    }
+
+        // }).then((t)=>{
+        //     console.log({t});
+        // }).catch((ex)=>{
+        //     console.log({ex});
+        // })
+
+        // }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
