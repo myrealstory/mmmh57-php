@@ -8,7 +8,8 @@ $title = '編輯通訊錄資料 - 拉拉的網站';
 //這裡我們先取得sid的值。然後再去判斷如果沒有sid的值，那我們就不變。直接不處理。
 $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
 if (empty($sid)) {
-    header('Location: ab_list.php');
+    // header('Location: ab_list.php');
+    echo $sid;
     exit;
 }
 //因為上面取得到sid的值所以才會接下來到這裡。
